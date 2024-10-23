@@ -30,7 +30,7 @@ CLASS y_check_scope_of_variable IMPLEMENTATION.
     settings-threshold = 0.
     settings-documentation = |{ c_docs_path-checks }scope-of-variable.md|.
 
-    set_check_message( 'Variable in use out of its scope!' ).
+    set_check_message( 'Variable &1 in use out of its scope!' ).
   ENDMETHOD.
 
 
@@ -69,7 +69,8 @@ CLASS y_check_scope_of_variable IMPLEMENTATION.
         raise_error( statement_level = <statement>-level
                      statement_index = statement_index
                      statement_from = <statement>-from
-                     check_configuration = check_configuration ).
+                     check_configuration = check_configuration
+                     parameter_01 = variable ).
       ENDLOOP.
 
     ENDLOOP.
